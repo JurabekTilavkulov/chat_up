@@ -18,8 +18,12 @@ class Messages extends Translations{
       "remPasword":"Parol yodizdan chiqdimi?",
       "Login":"Shaxsni tasdiqlash",
       "continue":"yoki quyidagilar bilan davom eting",
-      "account":"ekkountiz yoqmi?",
+      "account":"Ekkountiz yoqmi?",
       "Sign":"Ro'yxatlash",
+      "signUp":"Boshlash uchun ro'yxatdan o'ting",
+      "email":"Electron pochta",
+      "pleaseEmail":"Iltimos, pochta adress kiritishni unutmang",
+      "register":"Ro'yxatdan o'tish",
     },
     'ru_RU':{
       "selectLanguage":"Выберите язык ",
@@ -37,6 +41,10 @@ class Messages extends Translations{
       "continue":"или продолжить с",
       "account":"нет аккаунта?",
       "Sign":"Зарегистрироваться",
+      "signUp":"Зарегистрируйтесь, чтобы начать",
+      "email":"электронная почта",
+      "pleaseEmail":"Пожалуйста, введите адрес электронной почты",
+      "register":"Регистр",
     },
     'en_US':{
       "selectLanguage":"Select Language",
@@ -54,6 +62,10 @@ class Messages extends Translations{
       "continue":"or continue with",
       "account":"don’t have an account?",
       "Sign":"Sign Up",
+      "signUp":"Signup to get Started",
+      "email":"Email",
+      "pleaseEmail":"Please enter some email",
+      "register":"Register",
     }
   };
 

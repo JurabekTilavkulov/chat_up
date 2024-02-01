@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../data/controller/firebase_controller.dart';
+import '../../../data/controller/register_login_controller.dart';
+import '../../../data/utils/locale_keys.dart';
 
 class RegisterPage extends StatelessWidget {
    RegisterPage({Key? key}) : super(key: key);
-   FireBaseController fireBaseController=Get.find<FireBaseController>();
+   RegisterLoginController fireBaseController=Get.find<RegisterLoginController>();
 
    final _formKey1 = GlobalKey<FormState>();
    final _formKey3 = GlobalKey<FormState>();
@@ -45,8 +46,8 @@ class RegisterPage extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Hello!',style: TextStyle(fontWeight:FontWeight.w700,letterSpacing: 0.12,fontSize: 48,color: Colors.blue),),
-                        Text('Signup to get Started',style: TextStyle(color: Color(0xFF4E4B66),fontSize: 20,fontWeight: FontWeight.w400),)
+                        Text('${LocalKeys.hello.tr}!',style: TextStyle(fontWeight:FontWeight.w700,letterSpacing: 0.12,fontSize: 48,color: Colors.blue),),
+                        Text(LocalKeys.signUp.tr,style: TextStyle(color: Color(0xFF4E4B66),fontSize: 20,fontWeight: FontWeight.w400),)
                       ],
                     ),
                   ),
@@ -62,7 +63,7 @@ class RegisterPage extends StatelessWidget {
                       TextSpan(
                           children:[
                             TextSpan(
-                                text: 'Email',
+                                text: LocalKeys.email.tr,
                                 style: TextStyle(
                                   color: Color(0xFF4E4B66),
                                   fontSize: 14,
@@ -91,13 +92,13 @@ class RegisterPage extends StatelessWidget {
                               fireBaseController.emailTextFormField(email: value);
                               if(value==null || value.isEmpty){
 
-                                return 'Please enter some email';
+                                return LocalKeys.pleaseEmail.tr;
                               }
                               return null;
 
                             },
                             decoration:InputDecoration(
-                                hintText: 'Email',
+                                hintText: LocalKeys.email.tr,
                                 border:OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10)
                                 )
@@ -112,7 +113,7 @@ class RegisterPage extends StatelessWidget {
                       TextSpan(
                           children:[
                             TextSpan(
-                                text: 'Password',
+                                text: LocalKeys.password.tr,
                                 style: TextStyle(
                                   color: Color(0xFF4E4B66),
                                   fontSize: 14,
@@ -140,14 +141,14 @@ class RegisterPage extends StatelessWidget {
                               fireBaseController.passwordTextFormField(password: value);
                               if(value==null || value.isEmpty){
 
-                                return 'Please enter some password';
+                                return LocalKeys.passwordEnter.tr;
                               }
                               return null;
 
                             },
                             obscureText: false,
                             decoration:InputDecoration(
-                                hintText: 'Password',
+                                hintText:LocalKeys.password.tr,
                                 border:OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10)
                                 ),
@@ -176,7 +177,7 @@ class RegisterPage extends StatelessWidget {
 
                             }),
                       ),
-                      Text('Remember me',style: TextStyle(color: Color(0xFF4E4B66),),),
+                      Text(LocalKeys.remember.tr,style: TextStyle(color: Color(0xFF4E4B66),),),
                       SizedBox(
                         width:50,
                       ),
@@ -207,7 +208,7 @@ class RegisterPage extends StatelessWidget {
                       ),
                       child:Center(
                         child: Text(
-                          'Registor',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600,fontSize: 16),
+                          LocalKeys.register.tr,style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600,fontSize: 16),
                         ),
                       ),
                     ),
@@ -216,7 +217,7 @@ class RegisterPage extends StatelessWidget {
                     height: 16,
                   ),
                   Center(
-                    child:Text('or continue with',style: TextStyle(color: Color(0xFF4E4B66),fontSize: 14,),),
+                    child:Text(LocalKeys.continueT.tr,style: TextStyle(color: Color(0xFF4E4B66),fontSize: 14,),),
                   ),
                   SizedBox(
                     height: 16,
@@ -292,10 +293,10 @@ class RegisterPage extends StatelessWidget {
                   Row(
                     mainAxisAlignment:MainAxisAlignment.center,
                     children: [
-                      Text('Already have an account ? ',style: TextStyle(color: Color(0xFF667080)),),
+                      Text(LocalKeys.account.tr,style: TextStyle(color: Color(0xFF667080)),),
                       TextButton(onPressed:(){
-                        Navigator.pushReplacementNamed(context,'/loginPage');
-                      }, child:Text('Login',style: TextStyle(color: Color(0xFF1877F2),fontWeight: FontWeight.w600,),))
+                        Get.toNamed('/loginPage');
+                      }, child:Text(LocalKeys.login.tr,style: TextStyle(color: Color(0xFF1877F2),fontWeight: FontWeight.w600,),))
                     ],
                   ),
 

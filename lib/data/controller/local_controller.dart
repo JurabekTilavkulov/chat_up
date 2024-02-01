@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
@@ -12,7 +11,7 @@ class LocalController extends GetxController{
   Rx<Locale> get locale => _locale;  // getter
 
   changeLanguage(Locale locale){     //function
-    this._locale.value=locale;
+    _locale.value=locale;
     box.write('locale', '${locale.languageCode}_${locale.countryCode}');  //tanlov xotirada saqlanadi
     Get.updateLocale(locale);
   }

@@ -18,7 +18,7 @@ class LanguagePage extends StatelessWidget {
       bottomNavigationBar: TextButton(
           onPressed: () {
             Get.toNamed(AppRoutes.loginPage);
-          }, child: Text(LocalKeys.next.tr)),
+          }, child: Text(LocalKeys.next.tr,style: TextStyle(fontSize: 18),)),
       body: Obx(() {
         return Center(
           child: Column(
@@ -27,13 +27,13 @@ class LanguagePage extends StatelessWidget {
             children: [
               TextButton(onPressed: () {
                 controller.changeLanguage(Locale("uz","UZ"));
-              }, child: Text("UZ",style:TextStyle(color: controller.locale==Locale("uz","UZ")?Colors.red:Colors.grey),)),
+              }, child: Text("UZ",style:TextStyle(color: controller.locale==Locale("uz","UZ")?Colors.red:Colors.grey,fontSize: 18),)),
               TextButton(onPressed: () {
                 controller.changeLanguage(Locale("en","US"));
-              }, child: Text("US",style:TextStyle(color: controller.locale==Locale("en","US")?Colors.red:Colors.grey),)),
+              }, child: Text("US",style:TextStyle(color: controller.locale==Locale("en","US")?Colors.red:Colors.grey,fontSize: 18),)),
               TextButton(onPressed: () {
                 controller.changeLanguage(Locale("ru","RU"));
-              }, child: Text("RU",style:TextStyle(color: controller.locale==Locale("ru","RU")?Colors.red:Colors.grey),)),
+              }, child: Text("RU",style:TextStyle(color: controller.locale==Locale("ru","RU")?Colors.red:Colors.grey,fontSize: 18),)),
             ],
           ),
         );

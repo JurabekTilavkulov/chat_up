@@ -16,4 +16,8 @@ class LocalKeys{
   static const String continueT='continue';
   static const String account='account';
   static const String Sign='Sign';
+  static const String signUp='signUp';
+  static const String email='email';
+  static const String pleaseEmail='pleaseEmail';
+  static const String register='register';
 }

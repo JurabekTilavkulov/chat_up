@@ -1,6 +1,8 @@
+
 import 'package:firebase_auth/firebase_auth.dart';
 
-class FirebaseService{
+class RegisterLoginService{
+
  Future<UserCredential?> registerUser(String email, String parol) async {
     final userCredential=await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: parol,);
     final user=userCredential.user;
@@ -15,4 +17,8 @@ class FirebaseService{
    print("userLoginRunTimeType ${user.runtimeType}");
    return userCredental;
   }
+
+
+
+
 }

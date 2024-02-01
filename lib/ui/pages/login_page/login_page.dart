@@ -2,11 +2,11 @@ import 'package:chat_up/data/utils/locale_keys.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../data/controller/firebase_controller.dart';
+import '../../../data/controller/register_login_controller.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({Key? key}) : super(key: key);
-  FireBaseController fireBaseController=Get.find<FireBaseController>();
+  RegisterLoginController fireBaseController=Get.find<RegisterLoginController>();
 
   final _formKey = GlobalKey<FormState>();
   final _formKey1 = GlobalKey<FormState>();
