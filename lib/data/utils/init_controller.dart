@@ -15,4 +15,5 @@ void initControllers(){
   Get.put(RegisterLoginController(firebaseService: RegisterLoginService()));
   Get.put(ProfilePageController(profileService: ProfileService()));
 
+
 }

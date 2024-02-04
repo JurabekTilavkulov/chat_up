@@ -41,7 +41,7 @@ class ChatPage extends StatelessWidget {
                   Get.toNamed('/loginPage');
                 }, icon: Icon(Icons.backspace)),
                 IconButton(onPressed: () {
-                  Get.toNamed('/profilPage');
+                  Get.toNamed('/profilPageInfor');
                 },
                   icon: Icon(Icons.person),),
               ],
