@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:date_format/date_format.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -68,41 +69,46 @@ class ChatPage extends StatelessWidget {
                       },);
                     }
 
-
-
                     return ListView.builder(
                       itemBuilder:  (context, index) {
+
+                        Timestamp time=list?[index]['dataTime'];
+                        DateTime date=DateTime.fromMillisecondsSinceEpoch(time.millisecondsSinceEpoch);
+
                         bool b= list?[index]['user']==user?.email;
-                        print('b=${b}');
-                        return Column(   children: [
 
-                          Container(
-                            width:MediaQuery.of(context).size.width,
+                        return Container(
+                        width:MediaQuery.of(context).size.width,
 
-                            margin: EdgeInsets.all(8),
+                        margin: EdgeInsets.all(8),
 
-                            alignment: b?Alignment.centerRight:Alignment.centerLeft,
+                          alignment: b?Alignment.centerRight:Alignment.centerLeft,
 
-                            child: Container(
+                          child: Container(
+                            width: MediaQuery.of(context).size.width*0.7,
 
-                              padding: EdgeInsets.all(8),
-                              decoration: BoxDecoration(borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(10),
-                                bottomLeft: b?Radius.circular(10):Radius.circular(0),
-                                bottomRight:b? Radius.circular(0):Radius.circular(10),
-                                topRight: Radius.circular(10),
-                              ),
-                                  color:b? Color(0xffbffa9f):Color(0xfffae4e4)),
-                              constraints: BoxConstraints(maxWidth: 200),
-                              child: Column(   children: [
-                                Text("${list?[index]['user']}",style: TextStyle(color: Colors.indigo),),
-                                list?[index]['rasm']!=null?Image.network('${list?[index]['rasm']}'):Text(''),
-                                Text("${list?[index]['sms']}"),
-                              ],
-                              ),
+                            padding: EdgeInsets.all(8),
+                            decoration: BoxDecoration(borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(20),
+                              bottomLeft: b?Radius.circular(20):Radius.circular(0),
+                              bottomRight:b? Radius.circular(0):Radius.circular(20),
+                              topRight: Radius.circular(20),
                             ),
-                          )
-                        ],);
+                                color:b? Color(0xffbffa9f):Color(0xfffae4e4)),
+                           // constraints: BoxConstraints(maxWidth:250),
+                            child: Column(   children: [
+                              Text("${list?[index]['user']}",style: TextStyle(color: Colors.indigo),),
+                              list?[index]['rasm']!=null?Image.network('${list?[index]['rasm']}'):Text(''),
+                              Text("${list?[index]['sms']}"),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                               Text(formatDate(date,[dd,'/',mm,'/',yyyy,' ',hh,':',nn]),style: TextStyle(fontSize: 10),)
+                              ],)
+                            ],
+                            ),
+                          ),
+                        );
                       },
                       itemCount: list?.length??0,
                     );
