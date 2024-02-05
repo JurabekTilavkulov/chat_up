@@ -53,11 +53,11 @@ class ProfilePageController extends GetxController{
 
   readProfileInfor()async{
     User? user=await profileService.readProfile();
-    _urlImageprofile.value=await user!.photoURL!;
-    _emailProfile.value=await user.email!;
-    _displayNameProfile.value=await user.displayName!;
-    _uid.value=await user.uid;
+    if(user!=null){
+      _urlImageprofile.value=await user.photoURL!;
+      _emailProfile.value=await user.email!;
+      _displayNameProfile.value=await user.displayName!;
+      _uid.value=await user.uid;
+    }
   }
-
-
 }

@@ -68,5 +68,4 @@ class Messages extends Translations{
       "register":"Register",
     }
   };
-
 }

@@ -8,17 +8,9 @@ import '../../../data/controller/profil_page_controller.dart';
 
 class ProfilPageEdit extends StatelessWidget {
   ProfilPageEdit() ;
-
-
-
   CollectionReference collectionReference= FirebaseFirestore.instance.collection('collectionPathsms');
-
   @override
   Widget build(BuildContext context) {
-
-
-
-
     return Scaffold(
           appBar:AppBar(
             actions: [

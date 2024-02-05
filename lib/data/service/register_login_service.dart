@@ -18,7 +18,4 @@ class RegisterLoginService{
    return userCredental;
   }
 
-
-
-
 }

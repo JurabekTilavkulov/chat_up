@@ -12,8 +12,6 @@ import '../../../data/service/sms_service.dart';
 class ChatPage extends StatelessWidget {
    ChatPage({Key? key}) : super(key: key);
 
-
-
   @override
   Widget build(BuildContext context) {
     return GetBuilder<SmsController>(

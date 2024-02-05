@@ -16,6 +16,7 @@ class SplashPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 CircularProgressIndicator(),
+                SizedBox(height: 20,),
                 Text('ChatApp')
               ],
             ),

@@ -14,6 +14,4 @@ void initControllers(){
   Get.put(LocalController(),permanent: true);
   Get.put(RegisterLoginController(firebaseService: RegisterLoginService()));
   Get.put(ProfilePageController(profileService: ProfileService()));
-
-
 }

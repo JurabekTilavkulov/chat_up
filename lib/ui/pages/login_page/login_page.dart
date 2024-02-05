@@ -91,7 +91,6 @@ has its own associated style that is used for that subtree. */
                                 borderRadius: BorderRadius.circular(10)
                             )
                         ),
-
                       )
                     ],
                   )),
@@ -151,8 +150,6 @@ has its own associated style that is used for that subtree. */
                       )
                     ],
                   )),
-
-
               Row(
                 children: [
                   Expanded(child: Container(
@@ -284,8 +281,6 @@ has its own associated style that is used for that subtree. */
                           ],),),
 
                     ),))
-
-
                 ],
               ),
               SizedBox(

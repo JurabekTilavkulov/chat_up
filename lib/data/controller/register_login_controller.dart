@@ -54,8 +54,5 @@ class RegisterLoginController extends GetxController{
       if (userCredential != null) {
         Get.toNamed('/ChatPage');
       }
-
     }
-
-
 }

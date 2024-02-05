@@ -14,7 +14,6 @@ class SmsService{
   CollectionReference collectionReference= FirebaseFirestore.instance.collection('collectionPathsms');
   String? downLoadUrlImage;
 
-
   Future<void> addSms(MessageModel messageModel)async{
     collectionReference.add(messageModel.toJson()).then((value) => print("value=${value}"));
     print('collectionReference=${collectionReference}');

@@ -13,18 +13,11 @@ import 'firebase_options.dart';
 import 'data/controller/local_controller.dart';
 
 void main() async{
-  //A fast, extra light and synchronous key-value in memory, which backs up data
-  // to disk at each operation. It is written entirely in Dart and easily
-  // integrates with Get framework of Flutter.
   await GetStorage.init();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
   initControllers();  // utils da aloxida yozilgan funksiya
-
-
-
   runApp(const MyApp());
 }
 

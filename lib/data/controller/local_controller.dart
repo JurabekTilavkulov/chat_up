@@ -31,7 +31,6 @@ class LocalController extends GetxController{
 
     super.onInit();
   }
-
   @override
   void dispose() {
     super.dispose();
